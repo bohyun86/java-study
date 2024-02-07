@@ -12,4 +12,7 @@ public class Var2 {
         System.out.println(number);
         System.out.println(number);
     }
+
+    public static class Read2 {
+    }
 }
