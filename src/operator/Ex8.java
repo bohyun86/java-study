@@ -10,7 +10,7 @@ public class Ex8 {
 
         // Hint
         Scanner scanner = new Scanner(System.in);
-        System.out.println("first와 second값을 구한 후 큰 값을 출력합니다.");
+        System.out.println("first와 second값을 입력받은 후 큰 값을 출력합니다.");
         System.out.print("first값을 입력하세요 : ");
         int first = scanner.nextInt();
         System.out.print("second값을 입력하세요 : ");

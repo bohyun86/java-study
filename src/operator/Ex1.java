@@ -19,7 +19,5 @@ public class Ex1 {
         System.out.println("빼기 : " + (a - b));
         System.out.println("나누기 : " + (a / b));
         System.out.println("곱하기 : " + (a * b));
-
-
     }
 }
