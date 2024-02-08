@@ -13,16 +13,20 @@ public class Ex3 {
         24시간을 초과하는 주차의 경우에는 일일 최대 요금인 30000원을 적용하세요.
          */
 
+        // 주차시간을 입력받습니다.
         System.out.println("주차요금을 계산합니다.");
         Scanner scanner = new Scanner(System.in);
         System.out.print("주차시간을 입력하세요 : ");
-        int parkingTime = scanner.nextInt();
-        int parkingFee = 0;
+        double parkingTime = scanner.nextDouble();
 
+        // 기본 주차요금
+        int parkingFee = 5000;
+
+        // 주차요금 계산
         if (parkingTime <= 2) {
             parkingFee = 5000;
         } else if (parkingTime > 2 && parkingTime <= 24) {
-            parkingFee += (parkingTime - 2) * 2000;
+            parkingFee += (parkingTime - 2) / 2 * 1000;
         } else {
             parkingFee = 30000;
         }
