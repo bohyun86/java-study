@@ -24,7 +24,6 @@ public class Ex3 {
 
         // 주차요금 계산
         if (parkingTime <= 2) {
-            parkingFee = 5000;
         } else if (parkingTime > 2 && parkingTime <= 24) {
             parkingFee += (parkingTime - 2) / 2 * 1000;
         } else {
