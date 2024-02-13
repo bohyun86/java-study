@@ -19,7 +19,7 @@ public class Ex8 {
         Scanner scanner = new Scanner(System.in);
         int tryNumber = 1;
 
-        for (;;) {
+        while (true) {
             int try_ = scanner.nextInt();
 
             if (try_ > answer) {
