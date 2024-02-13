@@ -34,7 +34,7 @@ public class Ex8 {
             }
         }
 
-        System.out.println(tryNumber + "번만에 성공하셨습니다!");
+        System.out.println(tryNumber + "번만에 성공하셨습니다! 축하합니다");
 
 
         // 예시
