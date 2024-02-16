@@ -1,8 +1,6 @@
-package ex;
+package class0.ex;
 
-import java.util.Scanner;
-
-public class Ex2 {
+public class Ex3 {
     public static void main(String[] args) {
         /*
         Scanner scanner = new Scanner(System.in);
