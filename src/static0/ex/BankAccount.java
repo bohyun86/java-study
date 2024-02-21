@@ -7,8 +7,7 @@ public class BankAccount {
 
 
     public BankAccount() {
-        accountCount++;
-        accountID = accountCount;
+        accountID = ++accountCount;
     }
 
     public void deposit(int amount) {
