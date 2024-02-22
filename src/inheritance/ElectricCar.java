@@ -1,6 +1,4 @@
-package static0.inheritance;
-
-import static0.Member;
+package inheritance;
 
 public class ElectricCar extends Car {
 

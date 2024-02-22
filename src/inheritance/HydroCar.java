@@ -1,4 +1,4 @@
-package static0.inheritance;
+package inheritance;
 
 public class HydroCar extends Car {
     @Override

@@ -1,4 +1,4 @@
-package static0.inheritance;
+package inheritance;
 
 public class PetrolCar extends Car{
 
