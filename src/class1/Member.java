@@ -17,7 +17,7 @@ public class Member {
     }
 
     // 생성자 오버로딩: 매개변수의 개수, 순서가 다르거나, 타입이 다를 경우
-    Member(String name, int age) {
+    public Member(String name, int age) {
         this.name = name;
         this.age = age;
     }
