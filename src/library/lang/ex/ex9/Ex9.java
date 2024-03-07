@@ -1,4 +1,4 @@
-package library.lang.ex9;
+package library.lang.ex.ex9;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -30,8 +30,8 @@ public class Ex9 {
 
         boolean java = str.contains("Java");
         System.out.println("\"Java\" 포함 여부: " + java);
-        int i = str.lastIndexOf("프로그래밍");
-        System.out.println(i);
+        boolean i = str.endsWith("프로그래밍");
+        System.out.println("\"프로그래밍\"으로 끝나는가: " + i);
 
         int aCount = 0;
         for (int j = 0; j < str.length(); j++) {

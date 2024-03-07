@@ -1,4 +1,4 @@
-package library.lang.ex8;
+package library.lang.ex.ex8;
 
 import java.io.PrintStream;
 

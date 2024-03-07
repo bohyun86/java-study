@@ -1,4 +1,4 @@
-package library.lang.ex1;
+package library.lang.ex.ex1;
 
 public class Ex1 {
     public static void main(String[] args) {

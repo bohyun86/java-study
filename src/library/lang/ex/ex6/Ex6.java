@@ -1,4 +1,4 @@
-package library.lang.ex6;
+package library.lang.ex.ex6;
 
 import java.util.Map;
 
