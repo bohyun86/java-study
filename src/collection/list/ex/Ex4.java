@@ -11,7 +11,7 @@ public class Ex4 {
         Candidate candidate3 = new Candidate("마이콜");
         Candidate candidate4 = new Candidate("희동이");
 
-        // 후보 리스트에 넣기
+        // 후보 등록
         ArrayList<Candidate> arrayList = new ArrayList<>();
         arrayList.add(candidate1);
         arrayList.add(candidate2);
