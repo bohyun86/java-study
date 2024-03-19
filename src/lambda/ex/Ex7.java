@@ -35,6 +35,9 @@ public class Ex7 {
             }
         }
 
-        // employees.stream().filter(check).forEach(name);
+        employees
+                .stream()
+                .filter(check)
+                .forEach(name);
     }
 }
