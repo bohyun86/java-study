@@ -30,6 +30,8 @@ public class Ex13 {
         System.out.printf("Chicago 평균 인구: %,.0f\n", Chicago);
         System.out.printf("LosAngeles 평균 인구: %,.0f\n", LosAngeles);
 
+
+
     }
 
 }

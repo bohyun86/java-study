@@ -18,7 +18,7 @@ public class Ex12 {
                 new Employee("David", "Manager", 8000)
         );
 
-        int sum = employees.stream().mapToInt(Employee::salary).sum();
+        Integer sum = employees.stream().collect(Collectors.summingInt(Employee::salary));
         System.out.println("총 급여: " + sum);
 
         Map<String, Double> collect = employees.stream()
