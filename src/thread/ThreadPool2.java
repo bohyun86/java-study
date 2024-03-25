@@ -1,4 +1,4 @@
-ackage thread;
+package thread;
 
 import java.util.concurrent.*;
 import java.util.stream.IntStream;
