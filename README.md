@@ -718,6 +718,26 @@
        2. 처리 : 서버에서 클라이언트의 요청을 받아 처리
        3. 응답
        4. 표시 : 클라이언트에서 서버에서 받은 데이터를 적절하게 사용자에게 표시    
-    
+
+### JDBC 주요 클래스 사용 순서 분석
+- `java.sql` 라이브러리
+1. Driver 로딩하기
+  - DriverManager 클래스의 getConnection 메서드를 사용
+  - Connection 객체가 생성
+2. Statment 객체
+  - 정적인 쿼리에 사용
+  - 복잡하지 않은 간단한 쿼리 등에 사용
+  - 메서드
+    - executeQuery(String sql) : 검색(SELECT)문 사용, ResultSet 을 반환
+    - executeUpdate(String sql) : DML(INSERT, UPDATE, DELETE) 사용
+      - 테이블에 변경된 행의 개수를 반환
+    - close() : 객체 자원 해제
+  - 객체를 즉시 해제하지 않으면 메모리에 무시할 수 없는 공간이 남게되기 때문에 꼭 자원 해제
+3. ResultSet 객체
+  - SELECT 질의 결과를 행단위로 읽어오는 객체
+    - next() : boolean 반환, 행 정보가 존재하면 커서 이동 후 true 반환
+      - 더 이상 읽을 정보가 없으면 false
+    - get*Type*(숫자) : 컬럼의 순서를 해당 타입으로 반환
+    - get*Type*(이름) : 해당 컬럼명을 해당 타입으로 반환
 
 :+1:
