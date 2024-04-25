@@ -2,6 +2,7 @@ package jdbc.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 // DAO 인터페이스 구현 객체
@@ -30,6 +31,24 @@ public class MemberDaoImpl implements MemberDao {
 
     @Override
     public MemberDto getMemberById(String id) {
+        String sql = "SELECT id, name, email FROM members WHERE id = ?";
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, id);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                return new MemberDto(
+                        rs.getString("id"),
+                        rs.getString("name"),
+                        rs.getString("email")
+                );
+            }
+
+            pstmt.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         return null;
     }
 
