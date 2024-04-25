@@ -1,4 +1,4 @@
-package jdbc;
+package jdbc.ex;
 
 import java.sql.*;
 import java.util.Date;

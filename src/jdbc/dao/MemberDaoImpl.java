@@ -10,8 +10,8 @@ public class MemberDaoImpl implements MemberDao {
     Connection conn;
 
     // DAO 생성과 동시에 접근 객체 생성
-    public MemberDaoImpl() {
-        this.conn = DatabaseUtil.getConnection();
+    public MemberDaoImpl(Connection conn) {
+        this.conn = conn;
     }
 
     @Override
@@ -23,6 +23,8 @@ public class MemberDaoImpl implements MemberDao {
             pstmt.setString(2, member.getName());
             pstmt.setString(3, member.getEmail());
             pstmt.executeUpdate();
+
+            // 리소스 정리
             pstmt.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -52,23 +54,22 @@ public class MemberDaoImpl implements MemberDao {
         return null;
     }
 
-    // update 메서드
     @Override
     public void update(MemberDto member) {
         String sql = "UPDATE members SET name = ?, email = ? WHERE id = ?";
+        PreparedStatement pstmt = null;
         try {
-            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, member.getName());
             pstmt.setString(2, member.getEmail());
             pstmt.setString(3, member.getId());
             pstmt.executeUpdate();
             pstmt.close();
         } catch (SQLException e) {
-            throw new RuntimeException("Error updating member: " + e.getMessage(), e);
+            throw new RuntimeException(e);
         }
     }
 
-    // delete 메서드
     @Override
     public void delete(String id) {
         String sql = "DELETE FROM members WHERE id = ?";
@@ -78,8 +79,8 @@ public class MemberDaoImpl implements MemberDao {
             pstmt.executeUpdate();
             pstmt.close();
         } catch (SQLException e) {
-            throw new RuntimeException("Error deleting member: " + e.getMessage(), e);
+            throw new RuntimeException(e);
         }
-    }
 
+    }
 }

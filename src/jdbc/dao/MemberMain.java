@@ -5,24 +5,29 @@ import java.util.Scanner;
 // 메인 실행계층에서는 데이터 접근과 관련된 모든 코드를 DAO에 위임
 public class MemberMain {
     private static Scanner scanner = new Scanner(System.in);
+    private static MemberDao memberDao;
 
     public static void main(String[] args) {
+
+        // DAO 연결 객체 초기화
+        memberDao = new MemberDaoImpl(DatabaseUtil.getConnection());
+
         // 데이터베이스 접근 객체 생성
-        MemberDao memberDao = new MemberDaoImpl();
+        while (true) {
+            System.out.print("1. insert | 2. select | 3. update | 4. delete  | 5.exit > ");
+            String menu = scanner.nextLine();
 
-        System.out.print("1. insert | 2. select | 3. update | 4. delete > ");
-        String menu = scanner.nextLine();
-
-        switch (menu) {
-            case "1" -> insert(memberDao);
-            case "2" -> select(scanner, memberDao);
-            case "3" -> update(memberDao);
-            case "4" -> delete(memberDao);
+            switch (menu) {
+                case "1" -> insert();
+                case "2" -> select();
+                case "3" -> update();
+                case "4" -> delete();
+                case "5" -> {DatabaseUtil.close(); return;}
+            }
         }
-
     }
 
-    private static void delete(MemberDao memberDao) {
+    private static void delete() {
         System.out.print("삭제할 회원 ID를 입력하세요 : ");
         String id = scanner.nextLine();
         if (memberDao.getMemberById(id) != null) {
@@ -33,7 +38,7 @@ public class MemberMain {
         }
     }
 
-    private static void update(MemberDao memberDao) {
+    private static void update() {
         // Update 메서드 구현
 
         // 조회하기 위해서는 ID(식별자)가 필요
@@ -57,7 +62,7 @@ public class MemberMain {
         }
     }
 
-    private static void select(Scanner scanner, MemberDao memberDao) {
+    private static void select() {
         // SELECT
         System.out.print("조회할 id를 입력하세요 > ");
         String id = scanner.nextLine();
@@ -67,9 +72,7 @@ public class MemberMain {
         System.out.println("이메일 : " + hong.getEmail());
     }
 
-    private static void insert(MemberDao memberDao) {
-        Scanner scanner = new Scanner(System.in);
-
+    private static void insert() {
         // 회원 가입
         System.out.println("[회원 생성]");
         System.out.print("id : ");
